@@ -1,4 +1,4 @@
-# Google Maps Lead Intelligence (Local Demo Prototype)
+# Google Maps Lead Intelligence 
 
 Discover, enrich and prioritize business leads from Google Maps. This is a
 **local demo prototype** — not a production system. It runs entirely on your
