@@ -97,32 +97,63 @@ Exported files are also written to `output/leads.csv`, `output/leads.xlsx`,
   validates fields (e.g. rating vs. address, category vs. name) before
   accepting them.
 
-## Project structure
+## Project Structure
 
-```
-backend/
-  app.py                  FastAPI app + in-memory pipeline orchestration
-  config.py                All tunables (timeouts, retries, scoring weights)
-  scraper/
-    maps_discovery.py      Stage 1: Playwright search + scroll discovery
-    detail_enricher.py     Stage 2: Playwright per-business detail page
-    website_enricher.py    Stage 3: httpx-based email/social extraction
-  services/
-    lead_processor.py      Stage 4/5: normalize, dedupe, score
-    exporter.py             Stage 7: CSV/Excel/JSON export
-  utils/
-    validators.py           Field validation / sanity checks
-    helpers.py               Normalization, ids, JSON IO
-
-frontend/
-  components/               SearchPanel, PipelineProgress, StatsCards,
-                             LeadTable, LeadDetails, ExportButtons
-  src/                       App.jsx, api.js, main.jsx
-  styles/app.css
-
-data/raw, data/processed     Checkpoints and intermediate data
-output/                      Final CSV/Excel/JSON exports
-```
+google-maps-lead-intelligence/
+│
+├── backend/
+│   ├── __init__.py
+│   ├── app.py
+│   ├── config.py
+│   │
+│   ├── scraper/
+│   │   ├── __init__.py
+│   │   ├── maps_discovery.py
+│   │   ├── detail_enricher.py
+│   │   └── website_enricher.py
+│   │
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── lead_processor.py
+│   │   └── exporter.py
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       ├── helpers.py
+│       └── validators.py
+│
+├── frontend/
+│   ├── components/
+│   │   ├── ExportButtons.jsx
+│   │   ├── LeadDetails.jsx
+│   │   ├── LeadTable.jsx
+│   │   ├── PipelineProgress.jsx
+│   │   ├── SearchPanel.jsx
+│   │   └── StatsCards.jsx
+│   │
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── api.js
+│   │   └── main.jsx
+│   │
+│   ├── styles/
+│   │   └── app.css
+│   │
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── output/
+│
+├── .gitignore
+├── README.md
+├── requirements.txt
+└── run.py
 
 ## Troubleshooting
 
