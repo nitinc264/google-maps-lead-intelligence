@@ -1,0 +1,89 @@
+# ============================================================
+# Python
+# ============================================================
+venv/
+.venv/
+env/
+ENV/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================================
+# Environment / Secrets
+# ============================================================
+.env
+.env.*
+!.env.example
+
+# API keys / credentials
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# ============================================================
+# Node / React
+# ============================================================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================
+# Generated data / runtime files
+# ============================================================
+data/raw/*
+data/processed/*
+output/*
+
+# Keep directory structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!output/.gitkeep
+
+*.partial.json
+*.partial.csv
+*.partial.xlsx
+
+# Generated scraper results
+website_enriched_results.json
+website_enriched_results.partial.json
+
+# ============================================================
+# Playwright
+# ============================================================
+playwright-report/
+test-results/
+blob-report/
+
+# ============================================================
+# OS
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Editors
+# ============================================================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+
+# ============================================================
+# Misc
+# ============================================================
+*.log
+*.tmp
+*.temp
