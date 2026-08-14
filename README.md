@@ -99,6 +99,7 @@ Exported files are also written to `output/leads.csv`, `output/leads.xlsx`,
 
 ## Project Structure
 
+```text
 google-maps-lead-intelligence/
 │
 ├── backend/
