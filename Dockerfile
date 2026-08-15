@@ -9,9 +9,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN playwright install --with-deps chromium
 
 COPY backend ./backend
-COPY data ./data
-COPY output ./output
-COPY logs ./logs
 COPY run.py .
 
 ENV PYTHONUNBUFFERED=1
